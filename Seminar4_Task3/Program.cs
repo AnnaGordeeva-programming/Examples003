@@ -1,4 +1,7 @@
-﻿void FillArray(int [] collection)
+﻿// Напишите программу, которая выводит массив из 8 элементов, 
+//заполненный нулями и единицами в случайном порядке.
+
+void FillArray(int [] collection)
 {
     int length = collection.Length;
     int index = 0;
