@@ -1,18 +1,34 @@
 ﻿// Задайте массив. 
 //Напишите программу, которая определяет, присутствует ли заданное число в массиве.
 
-int[]array = new int [12];
-
-for(int i=0; i<12; i++)
+int[] GetArray(int size, int minValue, int maxValue)
 {
-    array[i] = new Random().Next(-9,10);
+    int[] res = new int[size];
+    for(int i=0; i<size; i++)
+    {
+    res[i] = new Random().Next(minValue, maxValue+1);
+    }
+    return res;
 }
 
-/*void search(int[] array_num, int num)
+void PrintArray(int[] col)
 {
-    for (int i = 0; i < array_num.Length; i++)
+    int count = col.Length;
+    for(int pos = 0; pos < count; pos++)
     {
-        if (array_num[i] == num)
+        Console.Write(col[pos] + " ");
+    }
+}
+
+int[]array = GetArray(12,-9,9);
+PrintArray(array);
+Console.WriteLine();
+
+void Search(int[] array, int num)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == num)
         {
             Console.WriteLine("Число есть");
             return;
@@ -21,20 +37,5 @@ for(int i=0; i<12; i++)
     Console.WriteLine("Числа нет");
 }
 
-search(array, 3);*/
-
-/*Console.Write("Введите число ");
-int number = int.Parse(Console.ReadLine());
-
-void SunNumber(int num)
-{
-    int sum = 0;
-    while (num != 0)
-    {
-        sum = sum + num % 10;
-        num = num / 10;
-    }
-    Console.WriteLine(sum);
-}
-SunNumber(number);*/
+Search(array, 3);
 
