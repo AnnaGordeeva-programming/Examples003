@@ -23,7 +23,7 @@ void ReverseArray(int[]inArray)
 }
 
 int[]array = GetArray(10,0,10);
-Console.WriteLine(String.Join(" ", array));
+Console.WriteLine(String.Join(" ", array));// Отпечатывание массива через пробел
 
 ReverseArray(array);
 Console.WriteLine(String.Join(" ", array));
