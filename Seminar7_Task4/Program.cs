@@ -28,14 +28,10 @@ void PrintArray(int[,] inArray)
 
 int DiagonalSum(int[,] array)
 {
-    int rows = array.GetLength(0);
-    int columns = array.GetLength(1);
-    if (rows < columns) columns = rows;
-    else rows = columns;
     int sum = 0;
-    for (int i = 0; i < rows; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < columns; j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
             if (i == j)
             {
@@ -53,7 +49,8 @@ Console.Write("Введите количество столбцов массив
 int columns = int.Parse(Console.ReadLine());
 
 int[,] array = GetArray(rows, columns, 0, 10);
+if (rows < columns) columns = rows;
+else rows = columns;
 PrintArray(array);
 Console.WriteLine();
-
 Console.WriteLine(DiagonalSum(array));
