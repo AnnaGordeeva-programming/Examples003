@@ -28,14 +28,18 @@ void PrintArray(int[,] inArray)
 
 int DiagonalSum(int[,] array)
 {
+    int rows = array.GetLength(0);
+    int columns = array.GetLength(1);
+    if (rows < columns) columns = rows;
+    else rows = columns;
     int sum = 0;
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < columns; j++)
         {
             if (i == j)
             {
-                sum += array[i,j];
+                sum += array[i, j];
             }
         }
     }
